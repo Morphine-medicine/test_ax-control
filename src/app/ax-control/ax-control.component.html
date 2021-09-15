@@ -1,0 +1,11 @@
+<div class="ax-control">
+  <div class="button_label">
+
+    <label class="title" [ngClass]="{'title_disabled': isDisabled}">{{title}}</label>
+    <div class="button" [ngClass]="{'button_invalid': isInvalid, 'button_focus': isInFocus}"(click)="onClick($event)"></div>
+  </div>
+  <div class="input" #input>
+    <ng-content></ng-content>
+  </div>
+
+</div>

@@ -1,0 +1,65 @@
+
+:host {
+
+  ::ng-deep {
+
+    .ax-control{
+      margin: 10px;
+    }
+    .ax-control input {
+      border: 1px solid grey;
+      border-radius: 4px;
+      padding: 5px;
+      width: 200px
+    }
+
+    .ax-control input:hover {
+      background-color: Gainsboro;
+    }
+
+    .ax-control input:invalid {
+      border-color: red;
+    }
+
+    .ax-control .button_invalid{
+      background: url("https://img.icons8.com/small/16/000000/error.png");
+      color: red;
+    }
+
+    .ax-control .button_focus{
+      background: url("https://img.icons8.com/small/16/000000/delete-sign.png");
+      color: blue;
+    }
+    .ax-control input.ng-untouched{
+      border: 1px solid grey !important;
+    }
+
+    .ax-control input:focus {
+      outline: none !important;
+      border: 1px solid blue !important;
+      caret-color: blue;
+    }
+    .ax-control input:disabled{
+      background-color: darkgrey !important;
+      color: grey !important;
+      border-color: grey !important;
+    }
+
+    .ax-control .title_disabled{
+      color: grey;
+    }
+    .ax-control .button{
+      position: relative;
+      left: 190px;
+      top: 5px;
+      height: 16px;
+      width: 16px;
+    }
+    .ax-control .button_label{
+      height: 20px;
+
+    }
+
+  }
+}
+
