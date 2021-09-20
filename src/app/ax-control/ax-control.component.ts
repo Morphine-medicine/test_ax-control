@@ -7,14 +7,21 @@ import {NgControl} from "@angular/forms";
   styleUrls: ['./ax-control.component.less']
 })
 export class AxControlComponent implements OnInit {
+
   @Input() title: string | undefined;
 
   // @ts-ignore
   @ViewChild('input') input: ElementRef<any>;
 
   private control: NgControl | undefined;
+  private controlType: string  = '';
   // @ts-ignore
   private validators: [{name: string, changeState: (newValue: boolean) => void}] = [];
+
+
+  // list of input types, that don't need any icon
+  // trying to add scaling possibility to this component in future
+  private typesWithoutButtons = ['checkbox', 'radio'];
 
   constructor() { }
 
@@ -29,16 +36,21 @@ export class AxControlComponent implements OnInit {
   }
 
   public get isInvalid () {
-    return !!this.control?.errors && !this.isInFocus && ((this.control?.touched || this.control?.dirty));
+    return !this.typesWithoutButtons.includes(this.controlType) && this.control?.errors && !this.isInFocus && ((this.control?.touched || this.control?.dirty));
   }
 
   public get isInFocus () {
-    return this.input?.nativeElement.querySelector('input')===document.activeElement;
+    return !this.typesWithoutButtons.includes(this.controlType) && this.input?.nativeElement.querySelector('input')===document.activeElement;
+  }
+
+  public get isTextInput() {
+    return !this.typesWithoutButtons.includes(this.controlType);
   }
 
 
-  public setControl (control: NgControl) {
+  public setControl (control: NgControl, controlType: string) {
     this.control = control;
+    this.controlType = controlType;
     this.control.control?.valueChanges.subscribe(() => this.validate());
   }
   public addValidator (validator: { name: string; changeState: (newValue: boolean) => void}) {

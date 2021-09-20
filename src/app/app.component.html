@@ -1,21 +1,34 @@
 <div>
+  <H3>Text inputs</H3>
   <ax-control title="Title">
     <input [(ngModel)]="inputValue" type="email" required email>
     <validation when="required"> Required</validation>
     <validation when="email"> Should be an email</validation>
   </ax-control>
   <ax-control title="Title">
-    <input [(ngModel)]="inputValue" type="email" required email >
+    <input [(ngModel)]="inputValue"
+           type="email"
+           required email >
     <validation when="required"> Required</validation>
     <validation when="email"> Should be an email</validation>
   </ax-control>
   <ax-control title="Title">
-    <input [(ngModel)]="inputValue" type="email" required email >
+    <input [(ngModel)]="inputValue"
+           type="email"
+           required
+           email >
     <validation when="required"> Required</validation>
     <validation when="email"> Should be an email</validation>
   </ax-control>
   <ax-control title="Title">
     <input [(ngModel)]="inputValue" type="email" required email disabled>
+    <validation when="required"> Required</validation>
+    <validation when="email"> Should be an email</validation>
+  </ax-control>
+  <br/>
+  <H3>Checkboxes</H3>
+  <ax-control title="Title">
+    <input [(ngModel)]="checkbox1Value" type="checkbox">
     <validation when="required"> Required</validation>
     <validation when="email"> Should be an email</validation>
   </ax-control>

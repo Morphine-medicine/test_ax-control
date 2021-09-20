@@ -8,4 +8,6 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'ax-control';
   public inputValue: string = '';
+
+  public checkbox1Value: boolean = false;
 }

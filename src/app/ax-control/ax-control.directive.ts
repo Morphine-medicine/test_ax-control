@@ -1,4 +1,4 @@
-import {Directive, Optional} from "@angular/core";
+import {Directive, ElementRef, Host, Optional} from "@angular/core";
 import {NgControl} from "@angular/forms";
 import {AxControlComponent} from "./ax-control.component";
 import {ValidationComponent} from "../validation/validation.component";
@@ -9,10 +9,11 @@ import {ValidationComponent} from "../validation/validation.component";
 export class InputDirective {
 
   constructor(@Optional() private axControlComponent: AxControlComponent,
-              @Optional() control: NgControl
+              @Optional() control: NgControl,
+              element: ElementRef<HTMLInputElement>
   ) {
-    if (axControlComponent && control) {
-      this.axControlComponent.setControl(control);
+    if (axControlComponent && control && element.nativeElement) {
+      this.axControlComponent.setControl(control, element.nativeElement.type);
     }
   }
 }
