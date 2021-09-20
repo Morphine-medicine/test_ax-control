@@ -1,19 +1,21 @@
-<div class="ax-control"
-     [ngClass]="{'text-control': isTextInput,
+<div [ngClass]="{'text-control': isTextInput,
                  'inline-control': !isTextInput}"
->
-  <ng-container *ngIf="isTextInput else inlineInput">
-    <div class="button_label">
-      <label class="title" [ngClass]="{'title_disabled': isDisabled}">{{title}}</label>
-      <div class="button" [ngClass]="{'button_invalid': isInvalid, 'button_focus': isInFocus}"(click)="onClick($event)"></div>
-    </div>
-  </ng-container>
-    <div #input>
-      <ng-content></ng-content>
-    </div>
+     class="ax-control">
+	<ng-container *ngIf="isTextInput else inlineInput">
+		<div class="button_label">
+			<label [ngClass]="{'title_disabled': isDisabled}"
+			       class="title">{{title}}</label>
+			<div (click)="onClick($event)"
+			     [ngClass]="{'button_invalid': isInvalid, 'button_focus': isInFocus}"
+			     class="button"></div>
+		</div>
+	</ng-container>
+	<div #input>
+		<ng-content></ng-content>
+	</div>
 
-  <ng-template #inlineInput>
-    <label class="title">{{title}}</label>
-  </ng-template>
+	<ng-template #inlineInput>
+		<label class="title">{{title}}</label>
+	</ng-template>
 
 </div>

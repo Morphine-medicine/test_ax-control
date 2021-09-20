@@ -1,25 +1,25 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ValidationComponent } from './validation.component';
+import {ValidationComponent} from './validation.component';
 
 describe('ValidationComponent', () => {
-  let component: ValidationComponent;
-  let fixture: ComponentFixture<ValidationComponent>;
+	let component: ValidationComponent;
+	let fixture: ComponentFixture<ValidationComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ ValidationComponent ]
-    })
-    .compileComponents();
-  });
+	beforeEach(async () => {
+		await TestBed.configureTestingModule({
+			declarations: [ValidationComponent]
+		})
+			.compileComponents();
+	});
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(ValidationComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+	beforeEach(() => {
+		fixture = TestBed.createComponent(ValidationComponent);
+		component = fixture.componentInstance;
+		fixture.detectChanges();
+	});
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+	it('should create', () => {
+		expect(component).toBeTruthy();
+	});
 });
