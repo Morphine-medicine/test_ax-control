@@ -28,8 +28,7 @@
   <br/>
   <H3>Checkboxes</H3>
   <ax-control title="Title">
-    <input [(ngModel)]="checkbox1Value" type="checkbox">
-    <validation when="required"> Required</validation>
-    <validation when="email"> Should be an email</validation>
+    <input [(ngModel)]="checkbox1Value" trueValueValidatorCheckbox type="checkbox">
+    <validation when="trueValidator"> Custom validator for checkbox (value shouldn't be true)</validation>
   </ax-control>
 </div>

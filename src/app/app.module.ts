@@ -6,6 +6,7 @@ import { AxControlComponent } from './ax-control/ax-control.component';
 import { ValidationComponent } from './validation/validation.component';
 import {FormsModule} from "@angular/forms";
 import {InputDirective, ValidatorDirective} from "./ax-control/ax-control.directive";
+import {trueValueValidator} from "./Validators/customValidators";
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import {InputDirective, ValidatorDirective} from "./ax-control/ax-control.direct
     AxControlComponent,
     ValidationComponent,
     InputDirective,
-    ValidatorDirective
+    ValidatorDirective,
+    trueValueValidator
   ],
     imports: [
         BrowserModule,
